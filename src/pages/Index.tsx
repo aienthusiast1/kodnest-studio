@@ -1,14 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import TopBar from "@/components/TopBar";
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <TopBar />
+      <main className="mx-auto flex max-w-[720px] flex-col items-center px-3 py-5 text-center">
+        <h1 className="font-serif text-[2.4rem] font-semibold leading-[1.15] tracking-tight text-foreground md:text-[3rem]">
+          Stop Missing<br />The Right Jobs.
+        </h1>
+        <p className="mt-3 max-text text-[1.05rem] leading-relaxed text-muted-foreground">
+          Precision-matched job discovery delivered daily at 9AM.
+        </p>
+        <Link
+          to="/settings"
+          className="mt-4 inline-block rounded-md bg-primary px-4 py-2 text-[0.95rem] font-medium text-primary-foreground transition-default hover:opacity-90"
+        >
+          Start Tracking
+        </Link>
+      </main>
     </div>
   );
-};
-
-export default Index;
+}
